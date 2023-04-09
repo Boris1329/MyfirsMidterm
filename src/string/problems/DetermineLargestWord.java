@@ -39,7 +39,7 @@ public class DetermineLargestWord {
 
     }
 
-    public static LinkedHashMap<Integer, String> findTheLargestWord(String wordGiven){
+    public static LinkedHashMap<Integer, String> findTheLargestWord (String wordGiven){
         LinkedHashMap<Integer, String> map = new LinkedHashMap<Integer, String>();
         map.put(wordGiven.length(),wordGiven);
         //implement

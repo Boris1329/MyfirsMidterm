@@ -19,7 +19,7 @@ public class DuplicateWord {
         duplicateWord.duplicateWord(duplicateWord.st);
 
     }
-    public LinkedHashMap<Integer, String> duplicateWord(String insertHere) {
+    public LinkedHashMap<Integer, String> duplicateWord (String insertHere) {
         LinkedHashMap<Integer, String > hahaha = new LinkedHashMap<Integer, String>();
         int count = 0;
         insertHere = insertHere.toLowerCase();

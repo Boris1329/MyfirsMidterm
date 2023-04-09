@@ -13,7 +13,7 @@ public class Palindrome {
         Palindrome palindrome = new Palindrome();
         System.out.println(palindrome.palindrome("MADAM"));
     }
-    public boolean palindrome(String insert) {
+    public boolean palindrome (String insert) {
         boolean correct = false;
         String reversed ="";
         char[] tester = insert.toCharArray();
