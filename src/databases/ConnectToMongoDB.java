@@ -72,5 +72,8 @@ public class ConnectToMongoDB {
         //for(User person:user){
             //System.out.println(person.getStName()+ " "+ person.getStID());
         //}
+        ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
+        connectToMongoDB.connectToMongoDB();
+
     }
 }

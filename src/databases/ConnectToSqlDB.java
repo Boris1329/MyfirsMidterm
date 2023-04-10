@@ -30,6 +30,7 @@ public class ConnectToSqlDB {
         String url = prop.getProperty("MYSQLJDBC.url");
         String userName = prop.getProperty("MYSQLJDBC.userName");
         String password = prop.getProperty("MYSQLJDBC.password");
+
         Class.forName(driverClass);
         connect = DriverManager.getConnection(url,userName,password);
         System.out.println("Database is connected");
@@ -193,5 +194,14 @@ public class ConnectToSqlDB {
 //        }
 
 
+    }
+
+    public void insertDataFromStringArrayToSqlTable(String[] textWords, String textDocument, String wordsFromFile) {
+    }
+
+    public void insertDataFromStringToSqlTable(String firstCol, String secondCol, String countries, String location, String countriesNames) {
+    }
+
+    public void insertDataFromArrayListToSqlTable(ArrayList<Integer> myLIst, String primeNumbers, String primeNumbers1) {
     }
 }
