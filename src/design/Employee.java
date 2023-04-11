@@ -1,4 +1,5 @@
 package design;
+import design.AbstactEmployeeClass;
 
 public interface Employee {
 	
@@ -12,15 +13,22 @@ public interface Employee {
 	public int employeeId();
 	
 	//employeeName() will return employee name
-	public String employeeName();
+	public String employeeName(String employeeName);
 	
 	//assignDepartment() will assign employee to departments
-    public void assignDepartment();
-	
+    public void assignDepartment(String departmentAgain);
+
 	//calculate employee salary
-	public int calculateSalary();
+	public int calculateSalary(int initialSalary);
 	
 	//employee benefit
 	public void benefitLayout();
+
+	public String employeeLastName(String weGetLastName);
+	public String position(String theriPos);
+	public String sector(String posit);
+	public String phone(String justPhone);
+	public String email(String superEmail);
+	public String location(String local);
 
 }

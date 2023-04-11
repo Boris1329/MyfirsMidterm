@@ -1,6 +1,13 @@
 package design;
+import design.AbstactEmployeeClass;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
+
+
+
 
 public class EmployeeInfo {
 	
@@ -21,6 +28,7 @@ public class EmployeeInfo {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
+	private int empoloyeedId;
 	
 	/*
 	 * You must implement the logic for below 2 methods and 
@@ -38,6 +46,63 @@ public class EmployeeInfo {
     public EmployeeInfo(String name, int employeeId){
 		
 	}
+	public int employeedId() {
+		List<String> id = new ArrayList<String>();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter your 3 digits id number");
+		String idin = sc.nextLine();
+		int employeeId = 0;
+		if (idin.length() > 3) {
+			System.out.println("Please enter only 3 digits id number");
+		} else {
+			for (int i = 0; i < id.size(); i++) {
+				if (id.get(i).equals(idin)) {
+					System.out.println("This id already exists, please enter the other 3 digits");
+					idin = sc.nextLine();
+				} else {
+					id.add(idin);
+				}
+			}
+			employeeId = Integer.valueOf(idin);
+		}
+		return employeeId;
+	}
+
+	public String employeeName(){
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter your first name :");
+		String firstName = sc.nextLine();
+		System.out.println("Enter your last name");
+		String lastName = sc.nextLine();
+
+		String employeename = firstName + " " + lastName;
+		return employeename;
+	}
+
+
+	public  int calculateEmployeeBonus(int numberOfYearsWithCompany, int performance, int salary) {
+
+		int annualsalary = salary;
+		annualsalary = calculateSalary();
+		int total = 0;
+		return total;
+	}
+
+
+	public int calculateSalary(){
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter how many hours you work per week?");
+		int hoursWorked = sc.nextInt();
+		System.out.println("How much you get paid per hour?");
+		int perHour = sc.nextInt();
+		System.out.println("How many hours overtime?");
+		int overtimeHours = sc.nextInt();
+
+		double perhourOvertime = 1.5 * perHour;
+		int salary = (hoursWorked * perHour) + (overtimeHours * (int)perhourOvertime) * 52; // calculating annual salary;
+		return salary;
+	}
+
 	
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
@@ -67,8 +132,21 @@ public class EmployeeInfo {
 		String todaysDate = sc.nextLine();
         String convertedJoiningDate = DateConversion.convertDate(joiningDate);
         String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+		String[] yearJoined = convertedJoiningDate.split("/");
+		String[] yearToday = convertedTodaysDate.split("/");
+		Integer yearsWorked = Integer.valueOf(yearToday[1]) - Integer.valueOf(yearJoined[1]);
 
-        //implement numbers of year from above two dates
+		EmployeeInfo employeeInfo = new EmployeeInfo(327);
+		int annualSalary = employeeInfo.calculateSalary();
+		int percentage =0;
+		for(int i=0; i<yearsWorked; i++){
+			percentage +=5;
+
+		}
+		total = (annualSalary * percentage) / 100;
+
+
+		//implement numbers of year from above two dates
 		//Calculate pension
 
 
